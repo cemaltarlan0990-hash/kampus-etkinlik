@@ -18,50 +18,107 @@
     </header>
 
     <main>
-        <h2>Kariyer Günleri 2026</h2>
         <p>Etkinlik bilgilerini aşağıdaki alanlardan düzenleyebilirsiniz.</p>
         <p id="form-notu">Bu örnek form değişiklikleri kaydetmez. Etkinlik listesi değişmez.</p>
+        <ul>
+            <li><a href="#kariyer">Kariyer Günleri 2026</a></li>
+            <li><a href="#robotik">Robotik Atölyesi</a></li>
+        </ul>
 
-        <!-- value, alanın başlangıçta dolu görünmesini sağlar. -->
-        <form action="etkinlik-guncelle.html#form-notu" method="get">
-            <p>
-                <label for="etkinlik-adi">Etkinlik Adı</label><br>
-                <input type="text" id="etkinlik-adi" name="etkinlik-adi" value="Kariyer Günleri 2026" required>
-            </p>
+        <section id="kariyer">
+            <h2>Kariyer Günleri 2026</h2>
+            <!-- value, alanın başlangıçta dolu görünmesini sağlar. -->
+            <form action="etkinlik-guncelle.html#form-notu" method="get">
+                <input type="hidden" name="etkinlik" value="kariyer">
+                <p>
+                    <label for="etkinlik-adi">Etkinlik Adı</label><br>
+                    <input type="text" id="etkinlik-adi" name="etkinlik-adi" value="Kariyer Günleri 2026" required>
+                </p>
 
-            <p>
-                <label for="kategori">Kategori</label><br>
-                <select id="kategori" name="kategori" required>
-                    <option value="seminer" selected>Seminer</option>
-                    <option value="atolye">Atölye</option>
-                </select>
-            </p>
+                <p>
+                    <label for="kategori">Kategori</label><br>
+                    <select id="kategori" name="kategori" required>
+                        <option value="seminer" selected>Seminer</option>
+                        <option value="atolye">Atölye</option>
+                    </select>
+                </p>
 
-            <p>
-                <label for="tarih-saat">Tarih / Saat</label><br>
-                <input type="datetime-local" id="tarih-saat" name="tarih-saat" value="2026-10-12T14:00" required>
-            </p>
+                <p>
+                    <label for="tarih-saat">Tarih / Saat</label><br>
+                    <input type="datetime-local" id="tarih-saat" name="tarih-saat" value="2026-10-12T14:00" required>
+                </p>
 
-            <p>
-                <label for="yer">Yer</label><br>
-                <input type="text" id="yer" name="yer" value="A Blok Konferans Salonu" required>
-            </p>
+                <p>
+                    <label for="yer">Yer</label><br>
+                    <input type="text" id="yer" name="yer" value="A Blok Konferans Salonu" required>
+                </p>
 
-            <p>
-                <label for="kontenjan">Kontenjan</label><br>
-                <input type="number" id="kontenjan" name="kontenjan" value="120" min="1" required>
-            </p>
+                <p>
+                    <label for="kontenjan">Kontenjan</label><br>
+                    <input type="number" id="kontenjan" name="kontenjan" value="120" min="1" required>
+                </p>
 
-            <p>
-                <label for="aciklama">Açıklama</label><br>
-                <textarea id="aciklama" name="aciklama" rows="4" cols="30" required>Kariyer Günleri 2026 semineri.</textarea>
-            </p>
+                <p>
+                    <label for="aciklama">Açıklama</label><br>
+                    <textarea id="aciklama" name="aciklama" rows="4" cols="30" required>Kariyer Günleri 2026 semineri.</textarea>
+                </p>
 
-            <button type="submit">Güncelle</button>
-            <button type="reset">Değişiklikleri geri al</button>
-        </form>
+                <button type="submit">Güncelle</button>
+                <button type="reset">Değişiklikleri geri al</button>
+            </form>
 
-        <p><a href="etkinlik-detay.html">Etkinliğe dön</a></p>
+            <p><a href="etkinlik-detay.html">Etkinliğe dön</a></p>
+        </section>
+
+        <hr>
+
+        <section id="robotik">
+            <h2>Robotik Atölyesi</h2>
+            <form action="etkinlik-guncelle.html#form-notu" method="get">
+                <input type="hidden" name="etkinlik" value="robotik">
+                <p>
+                    <label for="robotik-adi">Etkinlik Adı</label><br>
+                    <input type="text" id="robotik-adi" name="etkinlik-adi" value="Robotik Atölyesi" required>
+                </p>
+
+                <p>
+                    <label for="robotik-kategori">Kategori</label><br>
+                    <select id="robotik-kategori" name="kategori" required>
+                        <option value="seminer">Seminer</option>
+                        <option value="atolye" selected>Atölye</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="robotik-tarih">Tarih</label><br>
+                    <input type="date" id="robotik-tarih" name="tarih" value="2026-10-20" required>
+                </p>
+
+                <p>
+                    <label for="robotik-saat">Saat (henüz belirtilmedi, isteğe bağlı)</label><br>
+                    <input type="time" id="robotik-saat" name="saat">
+                </p>
+
+                <p>
+                    <label for="robotik-yer">Yer</label><br>
+                    <input type="text" id="robotik-yer" name="yer" value="Lab 2" required>
+                </p>
+
+                <p>
+                    <label for="robotik-kontenjan">Kontenjan (henüz belirtilmedi, isteğe bağlı)</label><br>
+                    <input type="number" id="robotik-kontenjan" name="kontenjan" min="1">
+                </p>
+
+                <p>
+                    <label for="robotik-aciklama">Açıklama</label><br>
+                    <textarea id="robotik-aciklama" name="aciklama" rows="4" cols="30" required>20 Ekim 2026 tarihinde Lab 2'de yapılacak robotik atölyesi.</textarea>
+                </p>
+
+                <button type="submit">Güncelle</button>
+                <button type="reset">Değişiklikleri geri al</button>
+            </form>
+            <p><a href="etkinlik-detay.html#robotik">Etkinliğe dön</a></p>
+        </section>
     </main>
 
     <footer>

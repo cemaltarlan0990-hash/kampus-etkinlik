@@ -18,6 +18,7 @@
     </header>
 
     <main>
+        <p>Seminer veya atölye eklemek için formu doldurun. Tüm alanlar zorunludur.</p>
         <!-- for ve id aynı olunca etiket ile form alanı birbirine bağlanır. -->
         <form action="etkinlik-ekle.html#form-notu" method="get">
             <p>
@@ -36,6 +37,16 @@
             <p>
                 <label for="tarih-saat">Tarih / Saat</label><br>
                 <input type="datetime-local" id="tarih-saat" name="tarih-saat" required>
+            </p>
+
+            <p>
+                <label for="yer">Yer</label><br>
+                <input type="text" id="yer" name="yer" required>
+            </p>
+
+            <p>
+                <label for="kontenjan">Kontenjan</label><br>
+                <input type="number" id="kontenjan" name="kontenjan" min="1" required>
             </p>
 
             <p>
