@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etkinlik Güncelle</title>
+</head>
+<body>
+    <header>
+        <h1>Etkinlik Güncelle</h1>
+        <nav>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="etkinlikler.html">Etkinlikler</a>
+            <a href="etkinlik-detay.html">Detay</a>
+            <a href="etkinlik-ekle.html">Ekle</a>
+            <a href="etkinlik-guncelle.html">Güncelle</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Kariyer Günleri 2026</h2>
+        <p>Etkinlik bilgilerini aşağıdaki alanlardan düzenleyebilirsiniz.</p>
+        <p id="form-notu">Bu örnek form değişiklikleri kaydetmez. Etkinlik listesi değişmez.</p>
+
+        <!-- value, alanın başlangıçta dolu görünmesini sağlar. -->
+        <form action="etkinlik-guncelle.html#form-notu" method="get">
+            <p>
+                <label for="etkinlik-adi">Etkinlik Adı</label><br>
+                <input type="text" id="etkinlik-adi" name="etkinlik-adi" value="Kariyer Günleri 2026" required>
+            </p>
+
+            <p>
+                <label for="kategori">Kategori</label><br>
+                <select id="kategori" name="kategori" required>
+                    <option value="seminer" selected>Seminer</option>
+                    <option value="atolye">Atölye</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="tarih-saat">Tarih / Saat</label><br>
+                <input type="datetime-local" id="tarih-saat" name="tarih-saat" value="2026-10-12T14:00" required>
+            </p>
+
+            <p>
+                <label for="yer">Yer</label><br>
+                <input type="text" id="yer" name="yer" value="A Blok Konferans Salonu" required>
+            </p>
+
+            <p>
+                <label for="kontenjan">Kontenjan</label><br>
+                <input type="number" id="kontenjan" name="kontenjan" value="120" min="1" required>
+            </p>
+
+            <p>
+                <label for="aciklama">Açıklama</label><br>
+                <textarea id="aciklama" name="aciklama" rows="4" cols="30" required>Kariyer Günleri 2026 semineri.</textarea>
+            </p>
+
+            <button type="submit">Güncelle</button>
+            <button type="reset">Değişiklikleri geri al</button>
+        </form>
+
+        <p><a href="etkinlik-detay.html">Etkinliğe dön</a></p>
+    </main>
+
+    <footer>
+        <!-- Buraya kendi adınızı ve öğrenci numaranızı yazın. -->
+        <p>Ad Soyad · 20xxxxxxx · 2026</p>
+    </footer>
+</body>
+</html>
