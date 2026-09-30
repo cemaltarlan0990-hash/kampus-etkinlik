@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etkinlik Ekle</title>
+    <link rel="stylesheet" href="css/numaran.css">
+</head>
+<body>
+    <header>
+        <div class="kabuk">
+            <h1>Etkinlik Ekle</h1>
+            <nav>
+                <a href="index.html">Ana Sayfa</a>
+                <a href="etkinlikler.html">Etkinlikler</a>
+                <a href="etkinlik-ekle.html" aria-current="page">Ekle</a>
+                <a href="etkinlik-guncelle.html">Güncelle</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="kabuk">
+        <p>Seminer veya atölye eklemek için formu doldurun. Tüm alanlar zorunludur.</p>
+
+        <section class="form-kutusu">
+            <!-- for ve id aynı olunca etiket ile form alanı birbirine bağlanır. -->
+            <form action="etkinlik-ekle.html#form-notu" method="get">
+                <div class="alanlar">
+                    <p class="alan genis">
+                        <label for="etkinlik-adi">Etkinlik Adı</label>
+                        <input type="text" id="etkinlik-adi" name="etkinlik-adi" required>
+                        <span class="hata-notu">Boş bırakıldı.</span>
+                    </p>
+
+                    <p class="alan">
+                        <label for="kategori">Kategori</label>
+                        <select id="kategori" name="kategori" required>
+                            <option value="">Seçiniz</option>
+                            <option value="seminer">Seminer</option>
+                            <option value="atolye">Atölye</option>
+                            <option value="soylesi">Söyleşi</option>
+                        </select>
+                        <span class="hata-notu">Boş bırakıldı.</span>
+                    </p>
+
+                    <p class="alan">
+                        <label for="tarih-saat">Tarih / Saat</label>
+                        <input type="datetime-local" id="tarih-saat" name="tarih-saat" required>
+                        <span class="hata-notu">Boş bırakıldı.</span>
+                    </p>
+
+                    <p class="alan">
+                        <label for="yer">Yer</label>
+                        <input type="text" id="yer" name="yer" required>
+                        <span class="hata-notu">Boş bırakıldı.</span>
+                    </p>
+
+                    <p class="alan">
+                        <label for="kontenjan">Kontenjan</label>
+                        <input type="number" id="kontenjan" name="kontenjan" min="1" required>
+                        <span class="hata-notu">Boş bırakıldı.</span>
+                    </p>
+
+                    <p class="alan genis">
+                        <label for="aciklama">Açıklama</label>
+                        <textarea id="aciklama" name="aciklama" rows="4" required></textarea>
+                        <span class="hata-notu">Boş bırakıldı.</span>
+                    </p>
+                </div>
+
+                <div class="dugmeler">
+                    <button type="submit">Kaydet</button>
+                    <button type="reset">Temizle</button>
+                </div>
+            </form>
+        </section>
+
+        <p id="form-notu"><small>Bu örnek form bilgileri kaydetmez.</small></p>
+    </main>
+
+    <footer>
+        <div class="kabuk">
+            <!-- Buraya kendi adınızı ve öğrenci numaranızı yazın. -->
+            <p>Cemal Tarlan · 20230000 · 2026</p>
+        </div>
+    </footer>
+</body>
+</html>
