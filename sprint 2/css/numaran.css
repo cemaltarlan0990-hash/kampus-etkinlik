@@ -1,21 +1,15 @@
-/* Cemal Tarlan — 20230000 */
+/* Cemal Tarlan — 2211012055 */
 
 /* =====================================================================
    1) NUMARADAN GELEN DEĞERLER — sadece bu blok öğrenciye göre değişir
    --------------------------------------------------------------------
-   --no   : öğrenci numarası
-   --ton  : numara mod 360  →  paletin ana rengi
-   --font : numaranın SON HANESİNE karşılık gelen font
-            0 Arial · 1 Verdana · 2 Tahoma · 3 "Trebuchet MS" · 4 Georgia
-            5 "Times New Roman" · 6 "Courier New" · 7 "Palatino Linotype"
-            8 system-ui · 9 "Lucida Console"
    ===================================================================== */
 :root {
-  --no: 20230000;
+  --no: 2211012055;
   --ton: mod(var(--no), 360);
   --renk-ana: hsl(var(--ton) 65% 38%);
   --renk-zemin: hsl(var(--ton) 30% 97%);
-  --font: Arial, Helvetica, sans-serif;
+  --font: "Times New Roman", serif;
   --bosluk-m: 1rem;
   --kose: 8px;
 }
