@@ -1,6 +1,6 @@
-// etkinlik-ekle.html ve etkinlik-guncelle.html bu modülü kullanır.
+// etkinlik-ekle.html ve etkinlik-guncelle.html bu dosyayı kullanır.
 // Formdaki name'ler Türkçe (ad, tarih...), nesnenin alanları data.js ile aynı (title, date...).
-import { events } from "./data.js";
+// events, önce yüklenen data.js'ten gelir.
 
 const form = document.querySelector("#etkinlik-formu");
 const mesaj = document.querySelector("#form-mesaj");

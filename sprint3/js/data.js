@@ -1,9 +1,12 @@
 // Bütün sayfalar etkinlikleri buradan okur. Veri tek yerde durur.
+// Modül (import/export) yerine normal script: sayfa dosyaya çift tıklanarak
+// (file://) açıldığında tarayıcı modülleri engelliyor. Bu dosya her sayfada
+// diğer script'ten ÖNCE yüklenir; events ve tarihMetni ortak kullanılır.
 // Tarih YYYY-AA-GG yazılır: bu biçim metin olarak sıralanınca
 // takvim sırasıyla aynı sonucu verir (Adım 5'teki localeCompare için).
 // Ekranda "12 Ekim 2026" olarak tarihMetni() ile gösterilir.
 
-export const events = [
+const events = [
   {
     id: "event-1",
     title: "Kariyer Günleri 2026",
@@ -69,7 +72,7 @@ export const events = [
 // "2026-10-12" + "14:00" → "12 Ekim 2026, 14:00"
 // Tarih ve saat birlikte verilir; yalnız tarih verilirse tarayıcı onu
 // UTC kabul eder ve bazı saat dilimlerinde bir gün kayabilir.
-export function tarihMetni(event) {
+function tarihMetni(event) {
   const tarih = new Date(`${event.date}T${event.time || "00:00"}`);
   const gun = tarih.toLocaleDateString("tr-TR", {
     day: "numeric",

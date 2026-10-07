@@ -1,5 +1,5 @@
 // etkinlik-detay.html?id=event-3 → adresteki id ile etkinliği bulur ve gösterir.
-import { events, tarihMetni } from "./data.js";
+// events ve tarihMetni, önce yüklenen data.js'ten gelir.
 
 const container = document.querySelector("#detay");
 const baslik = document.querySelector("header h1");

@@ -1,8 +1,8 @@
-// index.html ve etkinlikler.html bu modülü kullanır.
+// index.html ve etkinlikler.html bu dosyayı kullanır.
 // Fark container'daki data-limit işaretinden gelir:
 //   varsa → tarihi en yakın N etkinlik (ana sayfa)
 //   yoksa → hepsi + arama ve kategori filtresi (liste sayfası)
-import { events, tarihMetni } from "./data.js";
+// events ve tarihMetni, önce yüklenen data.js'ten gelir.
 
 const list = document.querySelector("#etkinlik-listesi");
 
