@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etkinlikler - Kampüs Etkinlikleri</title>
+    <link rel="stylesheet" href="css/2211012055.css">
+    <script type="module" src="js/event-list.js"></script>
+</head>
+<body>
+    <header>
+        <div class="kabuk">
+            <h1>Tüm Etkinlikler</h1>
+            <p class="alt-baslik">Ekim ve kasım aylarında kampüste düzenlenen etkinlikler.</p>
+            <nav>
+                <a href="index.html">Ana Sayfa</a>
+                <a href="etkinlikler.html" aria-current="page">Etkinlikler</a>
+                <a href="etkinlik-ekle.html">Ekle</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="kabuk">
+        <form id="filtre-formu" class="filtre" role="search">
+            <p class="alan">
+                <label for="arama">Etkinlik ara</label>
+                <input type="search" id="arama" name="arama" placeholder="Örn. atölye, kariyer">
+            </p>
+            <p class="alan">
+                <label for="kategori-filtre">Kategori</label>
+                <!-- Diğer kategoriler event-list.js tarafından veriden eklenir. -->
+                <select id="kategori-filtre" name="kategori">
+                    <option value="">Tümü</option>
+                </select>
+            </p>
+        </form>
+
+        <p id="sonuc" class="sonuc" aria-live="polite"></p>
+
+        <!-- Kartları event-list.js üretir. -->
+        <section id="etkinlik-listesi" class="kartlar uclu"></section>
+    </main>
+
+    <footer>
+        <div class="kabuk">
+            <p>Cemal Tarlan · 2211012055 · 2026</p>
+        </div>
+    </footer>
+</body>
+</html>

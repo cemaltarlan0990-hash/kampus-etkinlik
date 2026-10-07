@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kampüs Etkinlikleri</title>
+    <link rel="stylesheet" href="css/2211012055.css">
+    <!-- type="module" sayfa yüklendikten sonra çalışır; defer gerekmez. -->
+    <script type="module" src="js/event-list.js"></script>
+</head>
+<body>
+    <header>
+        <div class="kabuk">
+            <h1>Kampüs Etkinlikleri</h1>
+            <p class="alt-baslik">Fakültedeki seminer, atölye ve söyleşileri tek yerden takip edin.</p>
+            <nav>
+                <a href="index.html" aria-current="page">Ana Sayfa</a>
+                <a href="etkinlikler.html">Etkinlikler</a>
+                <a href="etkinlik-ekle.html">Ekle</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="kabuk">
+        <h2>Yaklaşan 2 Etkinlik</h2>
+
+        <!-- Kartları event-list.js üretir. data-limit="2": sadece tarihi en yakın 2 tanesi. -->
+        <section id="etkinlik-listesi" class="kartlar" data-limit="2"></section>
+
+        <p><a class="dugme" href="etkinlikler.html">Tüm etkinlikleri gör</a></p>
+    </main>
+
+    <footer>
+        <div class="kabuk">
+            <p>Cemal Tarlan · 2211012055 · 2026</p>
+        </div>
+    </footer>
+</body>
+</html>
