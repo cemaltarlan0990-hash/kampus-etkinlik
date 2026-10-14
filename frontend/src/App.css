@@ -229,7 +229,8 @@ textarea { min-height: 6rem; resize: vertical; }
 .hata-metni { color: var(--renk-hata); font-size: 0.9rem; }
 .hata-metni:empty { display: none; }
 
-.alan [aria-invalid="true"] {
+.alan [aria-invalid="true"],
+.alan :user-invalid {                  /* Sprint 4: Kaydet'ten sonra boş kalan zorunlu alan */
   border: 2px solid var(--renk-hata);
   background: var(--renk-hata-zemin);
 }

@@ -225,15 +225,17 @@ function App() {
 
             <section className="form-kutusu">
               {/* key: Ekle ↔ Güncelle geçişinde form boş açılsın */}
+              {/* required: Kaydet'e basınca boş kalan alanları tarayıcı işaretler,
+                  App.css :user-invalid ile kırmızı gösterir. State yok. */}
               <form key={page} className="form" onSubmit={(e) => e.preventDefault()}>
                 <div className="alanlar">
                   <p className="alan">
                     <label htmlFor="title">Etkinlik Adı</label>
-                    <input type="text" id="title" maxLength={80} placeholder="Örn. Kariyer Günleri 2026" />
+                    <input type="text" id="title" required minLength={3} maxLength={80} placeholder="Örn. Kariyer Günleri 2026" />
                   </p>
                   <p className="alan">
                     <label htmlFor="category">Kategori</label>
-                    <select id="category" defaultValue="">
+                    <select id="category" required defaultValue="">
                       <option value="">Seçiniz</option>
                       {categories.map((c) => (
                         <option key={c} value={c}>
@@ -244,15 +246,15 @@ function App() {
                   </p>
                   <p className="alan">
                     <label htmlFor="date">Tarih</label>
-                    <input type="date" id="date" />
+                    <input type="date" id="date" required />
                   </p>
                   <p className="alan">
                     <label htmlFor="time">Saat</label>
-                    <input type="time" id="time" />
+                    <input type="time" id="time" required />
                   </p>
                   <p className="alan">
                     <label htmlFor="location">Yer</label>
-                    <input type="text" id="location" maxLength={80} placeholder="Örn. A Blok Konferans Salonu" />
+                    <input type="text" id="location" required maxLength={80} placeholder="Örn. A Blok Konferans Salonu" />
                   </p>
                   <p className="alan">
                     <label htmlFor="capacity">Kontenjan</label>
