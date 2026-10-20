@@ -1,52 +1,41 @@
-# Kampüs Etkinlikleri - Sprint 1
+Canlı: https://kampus-etkinlik-iota.vercel.app
 
-Canlı site: https://kampus-etkinlik-nz1m.vercel.app/
+# Kampüs Etkinlikleri
 
-Bu proje yalnızca HTML ile hazırlanmıştır. CSS, JavaScript veya sunucu kodu içermez.
+Cemal Tarlan · 2211012055
 
-## Dosyalar
+Fakültedeki seminer, atölye ve söyleşilerin listelendiği site. Her sprint
+ayrı bir klasörde durur; güncel sürüm Sprint 4'teki React uygulamasıdır.
 
-- `sprint1/index.html`: Ana sayfa.
-- `sprint1/etkinlikler.html`: İki etkinliğin listesi ve ayın programı.
-- `sprint1/etkinlik-detay.html`: Kariyer Günleri ve Robotik Atölyesi detayları.
-- `sprint1/etkinlik-ekle.html`: Seminer veya atölye için boş ekleme formu.
-- `sprint1/etkinlik-guncelle.html`: Her iki etkinlik için önceden doldurulmuş güncelleme formları.
+## Klasörler
 
-## Kullanım
+| Klasör | Sprint | İçerik |
+|---|---|---|
+| `sprint1/` | 1 | Yalnızca HTML: beş sayfa, semantik etiketler, label'lı formlar. |
+| `sprint 2/` | 2 | Aynı beş sayfa, öğrenci numarasından gelen renk ve fontla CSS. |
+| `sprint3/` | 3 | JavaScript: veri `data.js`'te, kartlar ondan üretilir; arama, kategori filtresi ve form kontrolü. |
+| `frontend/` | 4 | Vite, TypeScript ve React: tipli veri, saf fonksiyonlar, beş sayfa tek `App.tsx` içinde. |
+| `img/` | | Etkinlik afişleri. |
 
-Bilgisayarda `sprint1/index.html` dosyasını tarayıcıda açın.
-Menü bağlantılarıyla beş sayfa arasında gezebilirsiniz.
+Sprint 4'ün dosya açıklamaları [`frontend/README.md`](frontend/README.md) içinde.
 
-Formlarda etiketler, zorunlu alanlar ve sayı kontrolü bulunur.
-Güncelleme formlarındaki geri alma düğmesi başlangıçtaki bilgileri geri getirir.
-Form gönderimi GET yöntemiyle bu sayfayı yeniden açar; bilgiler URL'ye eklenir.
-HTML tek başına kayıt tutmadığı için etkinlikler kalıcı olarak eklenmez veya değişmez.
-Gerçek içerik değişikliği için HTML dosyaları düzenlenip GitHub'a gönderilir.
+## Çalıştırma
 
-## Belgedeki kapsam
+Sprint 1–3: ilgili klasördeki `index.html` dosyasını tarayıcıda açın.
 
-Paylaşılan PDF tek sayfalık bir Sprint 1 özetidir. Görünen gereksinimler:
+Sprint 4:
 
-- Beş HTML sayfası.
-- Semantik etiketler.
-- Form alanlarıyla eşleşen label etiketleri.
-- CSS ve JavaScript kullanılmaması.
-- `sprint-01` Git etiketi.
-- Vercel üzerinde canlı adres.
+```bash
+cd frontend
+npm install
+npm run dev       # http://localhost:5173
+```
 
-Sonradan paylaşılan ekran görüntülerindeki dosya adları ve örnek etkinlikler de kullanılmıştır.
-Öğrencinin adı ve numarası paylaşılmadığından sayfa altlarında örnek alanlar durmaktadır.
-Robotik Atölyesi için saat ve kontenjan verilmediğinden bu alanlar boş ve isteğe bağlıdır.
-Silinen örnek afiş dosyasına giden kırık bağlantı kaldırılmıştır.
+## Yayınlama (Vercel)
 
-## Yayınlama
+- Root Directory: `frontend`
+- Framework Preset: `Vite`
 
-Vercel Root Directory: `sprint1`
+## Teslim etiketleri
 
-Framework Preset: `Other`
-
-Build Command: boş
-
-Output Directory: `.`
-
-Teslim sürümü Git etiketi: `sprint-01`.
+`sprint-01`, `sprint-04`
