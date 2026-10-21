@@ -1,0 +1,35 @@
+import type { CampusEvent } from "../../types/campus-event";
+import { formatDate } from "../../utils/format-date";
+
+interface EventCardProps {
+  event: CampusEvent;
+  // "Detayları gör" tıklanınca etkinliğin id'sini App'e bildirir.
+  onShowDetail: (id: string) => void;
+}
+
+// Ana sayfa ve Etkinlikler aynı kartı kullanır. key burada değil, listeyi çizen yerde.
+function EventCard({ event, onShowDetail }: EventCardProps) {
+  return (
+    <article className="kart">
+      <h3>{event.title}</h3>
+      <p className="etiket">{event.category}</p>
+      <p>
+        Tarih: <time dateTime={`${event.date}T${event.time}`}>{formatDate(event)}</time>
+      </p>
+      <p>Yer: {event.location}</p>
+      <p>Kontenjan: {event.capacity} kişi</p>
+      <p>{event.description}</p>
+      <a
+        href="#"
+        onClick={(e) => {
+          e.preventDefault();
+          onShowDetail(event.id);
+        }}
+      >
+        Detayları gör
+      </a>
+    </article>
+  );
+}
+
+export default EventCard;
