@@ -377,3 +377,75 @@ hr { border: 0; border-top: 1px solid var(--renk-kenar); margin: var(--bosluk-l)
 }
 
 .site-alt p { margin: 0; }
+
+/* =====================================================================
+   9) SPRINT 6 — menü çubuğu, yönetim tablosu, auth sayfaları
+   ===================================================================== */
+/* Navigation artık Header'ın dışında; aynı renkli çubuğun devamı gibi görünür. */
+.menu-cubugu { padding-block: 0 var(--bosluk-s); }
+.menu-cubugu nav { margin-top: 0; }
+.site-baslik:has(+ .menu-cubugu) { padding-bottom: 0; }
+
+.bolum-baslik { margin-bottom: var(--bosluk-m); }
+
+/* Yönetim tablosu: masaüstünde tablo, telefonda her satır bir kart */
+.tablo {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--bosluk-l);
+  background: var(--renk-kart);
+}
+.tablo th,
+.tablo td {
+  padding: var(--bosluk-s);
+  border: 1px solid var(--renk-kenar);
+  text-align: left;
+  vertical-align: middle;
+}
+.tablo th { background: var(--renk-ana); color: #fff; }
+
+.islemler { display: flex; flex-wrap: wrap; gap: var(--bosluk-s); }
+.tablo td.islemler { border-width: 0 0 1px; }
+.islemler .dugme,
+.islemler button { flex: 0 1 auto; }
+
+.buton-sil {
+  background: var(--renk-hata);
+  color: var(--renk-kart);
+  border: 1px solid var(--renk-hata);
+  font-weight: bold;
+}
+.buton-sil:hover { background: hsl(0 70% 32%); }
+
+@media (max-width: 699px) {
+  .tablo { background: transparent; }
+  .tablo thead { display: none; }
+  .tablo tr {
+    display: block;
+    margin-bottom: var(--bosluk-m);
+    padding: var(--bosluk-s);
+    background: var(--renk-kart);
+    border: 1px solid var(--renk-kenar);
+    border-top: 6px solid var(--renk-ana);
+    border-radius: var(--kose);
+  }
+  .tablo td { display: block; border: 0; padding: var(--bosluk-s) 0; }
+  .tablo td.islemler { display: flex; border: 0; }
+  .tablo td[data-baslik]::before {
+    content: attr(data-baslik) ": ";
+    font-weight: 700;
+  }
+}
+
+/* Giriş, kayıt, şifremi unuttum altındaki bağlantılar */
+.form-baglantilar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bosluk-m);
+  margin: var(--bosluk-m) 0 0;
+}
+.form-baglantilar a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--dokunma);
+}

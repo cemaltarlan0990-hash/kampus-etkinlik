@@ -1,6 +1,6 @@
 import type { Category } from "../../types/campus-event";
 
-// State App'te: kutular değeri props'tan okur, değişikliği callback ile bildirir.
+// State EventsPage'te: kutular değeri props'tan okur, değişikliği callback ile bildirir.
 interface EventFilterProps {
   searchText: string;
   category: Category | "";

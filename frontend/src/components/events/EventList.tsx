@@ -3,13 +3,12 @@ import EventCard from "./EventCard";
 
 interface EventListProps {
   events: CampusEvent[];
-  onShowDetail: (id: string) => void;
   emptyText?: string;
   // Ana sayfa 2, Etkinlikler 3 sütun (geniş ekranda).
   columns?: 2 | 3;
 }
 
-function EventList({ events, onShowDetail, emptyText = "Etkinlik bulunamadı.", columns = 2 }: EventListProps) {
+function EventList({ events, emptyText = "Etkinlik bulunamadı.", columns = 2 }: EventListProps) {
   if (events.length === 0) {
     return (
       <p className="sonuc" aria-live="polite">
@@ -22,7 +21,7 @@ function EventList({ events, onShowDetail, emptyText = "Etkinlik bulunamadı.", 
     <section className={columns === 3 ? "kartlar uclu" : "kartlar"}>
       {/* key: index değil id; filtre değişince sıra değişir. */}
       {events.map((event) => (
-        <EventCard key={event.id} event={event} onShowDetail={onShowDetail} />
+        <EventCard key={event.id} event={event} />
       ))}
     </section>
   );

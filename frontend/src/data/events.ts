@@ -66,5 +66,5 @@ export const events: CampusEvent[] = [
   },
 ];
 
-// Formdaki kategori listesi: tipteki dört değerin hepsi.
-export const categories: Category[] = ["Seminer", "Atölye", "Söyleşi", "Yarışma"];
+// Formdaki kategori listesi: tipteki beş değerin hepsi.
+export const categories: Category[] = ["Seminer", "Atölye", "Söyleşi", "Yarışma", "Futbol"];

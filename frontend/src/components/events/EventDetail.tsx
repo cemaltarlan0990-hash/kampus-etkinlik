@@ -1,14 +1,14 @@
+import { Link } from "react-router-dom";
 import type { CampusEvent } from "../../types/campus-event";
 import { formatDate } from "../../utils/format-date";
 
-// Etkinliği bulmak App'in işi; bileşen hazır etkinliği alır, id'yi değil.
+// Etkinliği bulmak EventDetailPage'in işi; bileşen hazır etkinliği alır, id'yi değil.
+// useParams yok, useEvents yok: sadece çizer.
 interface EventDetailProps {
   event: CampusEvent;
-  onBack: () => void;
-  onEdit: (id: string) => void;
 }
 
-function EventDetail({ event, onBack, onEdit }: EventDetailProps) {
+function EventDetail({ event }: EventDetailProps) {
   return (
     <article className="detay">
       <div className={event.image ? "detay-govde" : "detay-govde tek"}>
@@ -40,26 +40,12 @@ function EventDetail({ event, onBack, onEdit }: EventDetailProps) {
       <p>{event.description}</p>
 
       <p className="dugmeler">
-        <a
-          className="dugme"
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            onBack();
-          }}
-        >
+        <Link className="dugme" to="/events">
           &larr; Listeye dön
-        </a>
-        <a
-          className="dugme"
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            onEdit(event.id);
-          }}
-        >
+        </Link>
+        <Link className="dugme" to={`/admin/${event.id}/edit`}>
           Bu etkinliği güncelle
-        </a>
+        </Link>
       </p>
     </article>
   );
