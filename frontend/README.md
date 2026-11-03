@@ -1,4 +1,4 @@
-Canlı: https://kampus-etkinlik-iota.vercel.app
+Canlı: https://cemaltarlan-frontend.vercel.app
 
 # Kampüs Etkinlikleri — Sprint 6 + Vize (Router, Context ve Yönetim)
 

@@ -1,4 +1,4 @@
-Canlı: https://kampus-etkinlik-iota.vercel.app
+Canlı: https://cemaltarlan-frontend.vercel.app
 
 # Kampüs Etkinlikleri
 
