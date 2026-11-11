@@ -59,13 +59,13 @@ export const events = [
   },
   {
     id: "event-6",
-    title: "Fakülteler Arası Futbol Turnuvası Finali",
-    category: "Futbol",
-    capacity: 300,
-    date: "2026-12-02",
-    time: "16:00",
-    location: "Kampüs Spor Sahası",
-    description:
-      "Mühendislik ve İktisat fakülteleri kupayı kaldırmak için karşı karşıya. Tribün herkese açık.",
+    title: "İngilizce Pratik Etkinliği",
+    category: "Çalışma",
+    capacity: 40,
+    date: "2026-12-10",
+    time: "18:00",
+    location: "Bunno Cafe",
+    description: 
+      "Beraber arkadaşlarınızla ingilizce konuşma pratiği yapılabilecek güzel bir etkinlik",
   },
 ];
