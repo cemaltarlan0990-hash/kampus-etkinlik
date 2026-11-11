@@ -1,6 +1,4 @@
-// Bellek içi etkinlik dizisi. Sunucu yeniden başlayınca POST ile
-// eklenenler kaybolur; Sprint 8'de MongoDB'ye taşınacak.
-// Afişler (image) frontend'de kaldı, burada yok.
+
 export const events = [
   {
     id: "event-1",
