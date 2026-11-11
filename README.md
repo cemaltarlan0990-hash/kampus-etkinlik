@@ -17,6 +17,7 @@ yönetim paneli, giriş ve kayıt sayfaları).
 | `sprint 2/` | 2 | Aynı beş sayfa, öğrenci numarasından gelen renk ve fontla CSS. |
 | `sprint3/` | 3 | JavaScript: veri `data.js`'te, kartlar ondan üretilir; arama, kategori filtresi ve form kontrolü. |
 | `frontend/` | 4–6 | Vite, TypeScript ve React. Sprint 4: tipli veri, saf fonksiyonlar, beş sayfa tek `App.tsx` içinde. Sprint 5: `App.tsx` props ile konuşan 8 bileşene bölündü. Sprint 6: React Router ile 10 adres, `EventsContext`, ekle/güncelle/sil, form doğrulama. |
+| `backend/` | 7 | Node + Express REST API: `/health`, `GET /events`, `GET /events/:id`, `POST /events`. Veri bellekte. Ayrıntı: [`backend/README.md`](backend/README.md). |
 | `img/` | | Etkinlik afişleri. |
 
 `frontend/` route listesi, dosya açıklamaları ve bileşen ağacı [`frontend/README.md`](frontend/README.md) içinde.
@@ -31,6 +32,15 @@ Sprint 4–6:
 cd frontend
 npm install
 npm run dev       # http://localhost:5173
+```
+
+Sprint 7 (backend):
+
+```bash
+cd backend
+npm install
+cp .env.example .env
+npm run dev       # http://localhost:3000
 ```
 
 ## Yayınlama (Vercel)

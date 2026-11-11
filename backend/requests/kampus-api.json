@@ -1,0 +1,116 @@
+{
+  "info": {
+    "_postman_id": "5b0f3c2e-7a41-4d8e-9c1a-2211012055a7",
+    "name": "Kampüs API",
+    "description": "Sprint 7 · Kampüs Etkinlikleri REST API için 6 istek. Sunucu: http://localhost:3000",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1 · GET /health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["health"]
+        },
+        "description": "Beklenen: 200 · status ok + student"
+      },
+      "response": []
+    },
+    {
+      "name": "2 · GET /events",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/events",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["events"]
+        },
+        "description": "Beklenen: 200 · 6 kayıt"
+      },
+      "response": []
+    },
+    {
+      "name": "3 · GET /events/event-2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/events/event-2",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["events", "event-2"]
+        },
+        "description": "Beklenen: 200 · id'si event-2 olan kayıt"
+      },
+      "response": []
+    },
+    {
+      "name": "4 · GET /events/yok",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/events/yok",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["events", "yok"]
+        },
+        "description": "Beklenen: 404 · { error: { message } }"
+      },
+      "response": []
+    },
+    {
+      "name": "5 · POST /events (tam body)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Git Atölyesi\",\n  \"category\": \"Atölye\",\n  \"date\": \"2026-12-01\",\n  \"capacity\": 30\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "http://localhost:3000/events",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["events"]
+        },
+        "description": "Beklenen: 201 · yeni id ile kayıt"
+      },
+      "response": []
+    },
+    {
+      "name": "6 · POST /events (sadece title)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Eksik Etkinlik\"\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "http://localhost:3000/events",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["events"]
+        },
+        "description": "Beklenen: 400 · title, category and date are required"
+      },
+      "response": []
+    }
+  ]
+}
