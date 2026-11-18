@@ -2,9 +2,17 @@
   "info": {
     "_postman_id": "5b0f3c2e-7a41-4d8e-9c1a-2211012055a7",
     "name": "Kampüs API",
-    "description": "Sprint 7 · Kampüs Etkinlikleri REST API için 6 istek. Sunucu: http://localhost:3000",
+    "description": "Sprint 8 · Kampüs Etkinlikleri REST API (MongoDB) için 6 istek. Sunucu: http://localhost:3000. Önce npm run seed, sonra npm run dev. 2. istek listedeki ilk etkinliğin _id'sini eventId değişkenine kaydeder; 3. istek onu kullanır.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
+  "variable": [
+    {
+      "key": "eventId",
+      "value": "6afd55496d283ef5baa6ddfd",
+      "type": "string",
+      "description": "GET /events listesinden bir _id. Her npm run seed'den sonra değişir; 2. istek otomatik günceller."
+    }
+  ],
   "item": [
     {
       "name": "1 · GET /health",
@@ -18,12 +26,30 @@
           "port": "3000",
           "path": ["health"]
         },
-        "description": "Beklenen: 200 · status ok + student"
+        "description": "Beklenen: 200 · status ok + time + student (öğrenci numarası)"
       },
       "response": []
     },
     {
       "name": "2 · GET /events",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"200 OK\", () => pm.response.to.have.status(200));",
+              "const list = pm.response.json();",
+              "pm.test(\"Her kayıtta _id ve createdAt var\", () => {",
+              "  pm.expect(list.length).to.be.above(0);",
+              "  pm.expect(list[0]).to.have.property(\"_id\");",
+              "  pm.expect(list[0]).to.have.property(\"createdAt\");",
+              "});",
+              "if (list.length) pm.collectionVariables.set(\"eventId\", list[0]._id);"
+            ]
+          }
+        }
+      ],
       "request": {
         "method": "GET",
         "header": [],
@@ -34,23 +60,23 @@
           "port": "3000",
           "path": ["events"]
         },
-        "description": "Beklenen: 200 · 6 kayıt"
+        "description": "Beklenen: 200 · seed sonrası 6 kayıt; her kayıtta _id, createdAt ve updatedAt. İlk kaydın _id'si eventId değişkenine yazılır."
       },
       "response": []
     },
     {
-      "name": "3 · GET /events/event-2",
+      "name": "3 · GET /events/:id (listeden _id)",
       "request": {
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3000/events/event-2",
+          "raw": "http://localhost:3000/events/{{eventId}}",
           "protocol": "http",
           "host": ["localhost"],
           "port": "3000",
-          "path": ["events", "event-2"]
+          "path": ["events", "{{eventId}}"]
         },
-        "description": "Beklenen: 200 · id'si event-2 olan kayıt"
+        "description": "Beklenen: 200 · tek etkinlik. {{eventId}} 2. istekte listeden alınır; seed tekrar çalıştıysa önce 2. isteği gönderin."
       },
       "response": []
     },
@@ -66,7 +92,7 @@
           "port": "3000",
           "path": ["events", "yok"]
         },
-        "description": "Beklenen: 404 · { error: { message } }"
+        "description": "Beklenen: 404 (500 değil) · { error: { message: \"Event not found\" } }"
       },
       "response": []
     },
@@ -87,7 +113,7 @@
           "port": "3000",
           "path": ["events"]
         },
-        "description": "Beklenen: 201 · yeni id ile kayıt"
+        "description": "Beklenen: 201 · yeni _id, createdAt ve updatedAt ile kayıt. Sunucuyu kapatıp açınca GET /events'te hâlâ görünür."
       },
       "response": []
     },
@@ -108,7 +134,7 @@
           "port": "3000",
           "path": ["events"]
         },
-        "description": "Beklenen: 400 · title, category and date are required"
+        "description": "Beklenen: 400 · schema doğrulaması: date ve category zorunlu (ValidationError)"
       },
       "response": []
     }
