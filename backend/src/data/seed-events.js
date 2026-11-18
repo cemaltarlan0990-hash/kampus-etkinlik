@@ -1,7 +1,9 @@
-
-export const events = [
+// Seed verisi: npm run seed bu 6 etkinliği veritabanına yazar.
+// id alanı yok; MongoDB her kayda kendi _id'sini verir.
+// category sadece schema'daki enum değerlerinden biri olabilir:
+// Seminer, Atölye, Söyleşi, Yarışma
+export const seedEvents = [
   {
-    id: "event-1",
     title: "Mezun Buluşması: İlk İşimde Ne Öğrendim?",
     category: "Seminer",
     capacity: 90,
@@ -12,7 +14,6 @@ export const events = [
       "Son üç yılın mezunları ilk iş yıllarını, mülakat deneyimlerini ve stajdan işe geçişi anlatıyor.",
   },
   {
-    id: "event-2",
     title: "Arduino ile Akıllı Sera",
     category: "Atölye",
     capacity: 18,
@@ -23,7 +24,6 @@ export const events = [
       "Nem ve sıcaklık sensörleriyle küçük bir sera modelini otomatik sulayan devre kuruyoruz.",
   },
   {
-    id: "event-3",
     title: "Açık Kaynak Projelere Nasıl Katkı Verilir?",
     category: "Söyleşi",
     capacity: 70,
@@ -34,7 +34,6 @@ export const events = [
       "İlk pull request'ten bakımcı olmaya: issue seçmek, kod incelemesi ve topluluk kuralları.",
   },
   {
-    id: "event-4",
     title: "Figma ile Mobil Arayüz Tasarımı",
     category: "Atölye",
     capacity: 25,
@@ -45,7 +44,6 @@ export const events = [
       "Bir etkinlik uygulamasının üç ekranını bileşenler ve otomatik yerleşimle baştan tasarlıyoruz.",
   },
   {
-    id: "event-5",
     title: "Kampüs Kodlama Maratonu",
     category: "Yarışma",
     capacity: 60,
@@ -56,14 +54,13 @@ export const events = [
       "Üç kişilik takımlarla 8 saatte kampüs yaşamını kolaylaştıran bir uygulama prototipi.",
   },
   {
-    id: "event-6",
     title: "İngilizce Pratik Etkinliği",
-    category: "Çalışma",
+    category: "Söyleşi",
     capacity: 40,
     date: "2026-12-10",
     time: "18:00",
     location: "Bunno Cafe",
-    description: 
-      "Beraber arkadaşlarınızla ingilizce konuşma pratiği yapılabilecek güzel bir etkinlik",
+    description:
+      "Beraber arkadaşlarınızla İngilizce konuşma pratiği yapılabilecek güzel bir etkinlik.",
   },
 ];
