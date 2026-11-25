@@ -5,6 +5,7 @@ export async function connectDatabase() {
   if (!uri) throw new Error("MONGODB_URI tanımlı değil");
   await mongoose.connect(uri);
   const { host, name } = mongoose.connection;
-  const yer = uri.startsWith("mongodb+srv://") ? "Atlas" : "yerel";
+  // mongodb+srv:// ya da standart adres; host *.mongodb.net ise Atlas
+  const yer = uri.startsWith("mongodb+srv://") || host.endsWith(".mongodb.net") ? "Atlas" : "yerel";
   console.log(`MongoDB bağlandı (${yer}): ${host}/${name}`);
 }
