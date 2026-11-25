@@ -135,7 +135,7 @@ tarihi tarih olarak karşılaştırır, yanıtta yine `"05-11-2026"` görünür.
 | `src/data/seed-events.js` | Seed için 6 örnek etkinlik (2'si geçmiş tarihli, id alanı yok) |
 | `src/seed.js` | `npm run seed`: önce `deleteMany`, sonra `insertMany` |
 | `requests/kampus-api.json` | Postman collection (v2.1): 19 istek, testleriyle |
-| `requests/run-results.json` | Collection Runner sonucu (Postman > Runner > Export Results) |
+| `requests/run-results.json` | Ders test collection'ının çalıştırma sonucu: 18 istek, 45 test, 0 hata (`newman run … --reporters cli,json --reporter-json-export requests/run-results.json`) |
 
 ## Test
 
